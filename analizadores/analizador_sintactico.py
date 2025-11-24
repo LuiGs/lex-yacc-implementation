@@ -179,6 +179,7 @@ def p_error(p):
         print(f"Error sintáctico en la línea {p.lineno}. No se esperaba el token: '{p.value}' (tipo: {p.type})")
     else:
         print("Error sintáctico: fin de archivo inesperado")
+    raise Exception('syntax', 'error')
 
 # Precedencia y asociatividad de operadores (de menor a mayor precedencia)
 precedence = (

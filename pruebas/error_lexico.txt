@@ -1,0 +1,4 @@
+def calcular(x, y):
+    resultado = x + y
+    valor = 10 @ 5
+    return resultado

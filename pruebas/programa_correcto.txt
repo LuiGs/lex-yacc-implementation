@@ -1,0 +1,24 @@
+def calcular(a, b):
+    x = 10
+    y = 3.5
+    z = x + y
+    resultado = z * 2
+    mayor = max(a, b)
+    menor = min(a, b)
+    redondeado = round(resultado)
+    suma = a + b
+    resta = suma - 5
+    multiplicacion = resta * 3
+    division = multiplicacion / 2
+    comparacion = suma >= 10
+    logico = comparacion and mayor <= 100
+    negacion = not logico
+    texto = "Calculo completado"
+    entero = int(3.7)
+    decimal = float(10)
+    cadena = str(42)
+    w = 0
+    w += 5
+    w -= 2
+    final = min(max(a, b), round(z))
+    return final

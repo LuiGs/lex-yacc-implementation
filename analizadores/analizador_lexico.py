@@ -69,7 +69,7 @@ def t_newline(t):
 
 def t_error(t):
     print(f"Error léxico: carácter ilegal '{t.value[0]}' en línea {t.lexer.lineno}")
-    t.lexer.skip(1)
+    raise Exception('lexical', 'error')
 
 lexer = lex.lex()
 
