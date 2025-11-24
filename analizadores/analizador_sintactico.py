@@ -143,34 +143,25 @@ def p_atomo_parentesis(p):
     '''atomo : I_PAR expresion D_PAR'''
     p[0] = p[2]
 
-def p_llamada_funcion(p):
-    '''llamada_funcion : nombre_funcion I_PAR lista_argumentos D_PAR'''
+def p_llamada_funcion_dos_args(p):
+    '''llamada_funcion : funcion_dos_args I_PAR expresion COMA expresion D_PAR'''
+    p[0] = ('llamada_funcion', p[1], p[3], p[5])
+
+def p_llamada_funcion_un_arg(p):
+    '''llamada_funcion : funcion_un_arg I_PAR expresion D_PAR'''
     p[0] = ('llamada_funcion', p[1], p[3])
 
-def p_nombre_funcion(p):
-    '''nombre_funcion : FUNC_MIN
-                      | FUNC_MAX
-                      | FUN_ROUND
+def p_funcion_dos_args(p):
+    '''funcion_dos_args : FUNC_MIN
+                        | FUNC_MAX'''
+    p[0] = p[1]
+
+def p_funcion_un_arg(p):
+    '''funcion_un_arg : FUN_ROUND
                       | FUNC_INT
                       | FUNC_STR
                       | FUNC_FLOAT'''
     p[0] = p[1]
-
-def p_lista_argumentos_vacia(p):
-    '''lista_argumentos : '''
-    p[0] = []
-
-def p_lista_argumentos(p):
-    '''lista_argumentos : argumentos'''
-    p[0] = p[1]
-
-def p_argumentos_simple(p):
-    '''argumentos : expresion'''
-    p[0] = [p[1]]
-
-def p_argumentos_multiple(p):
-    '''argumentos : expresion COMA argumentos'''
-    p[0] = [p[1]] + p[3]
 
 # Manejo de errores
 def p_error(p):
