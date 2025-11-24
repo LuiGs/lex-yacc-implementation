@@ -70,13 +70,14 @@ python3 menu.py
 - Programa válido que utiliza todos los elementos del lenguaje
 - Genera el árbol sintáctico exitosamente
 
-**4. Analizar archivo personalizado**
-- Permite ingresar la ruta de cualquier archivo `.txt`
-- Útil para probar tus propios programas
-- Ejemplo de uso:
-  ```
-  ➤ Ruta: pruebas/mi_programa.txt
-  ```
+**4. Probar prueba personalizable**
+- Analiza `pruebas/prueba_personalizable.txt`
+- Edita este archivo con tu propio código para probarlo
+- Instrucciones:
+  1. Abre `pruebas/prueba_personalizable.txt` en tu editor
+  2. Escribe o pega el código que quieras probar
+  3. Selecciona la opción 4 en el menú
+  4. El analizador ejecutará tu código
 
 **5. Salir**
 - Cierra el programa
@@ -109,6 +110,7 @@ proyecto_compiladores/
 │   ├── error_lexico.txt             # Caso de prueba: error léxico
 │   ├── error_sintactico.txt         # Caso de prueba: error sintáctico
 │   ├── programa_correcto.txt        # Caso de prueba: programa válido
+│   ├── prueba_personalizable.txt    # ⭐ Archivo editable para tus pruebas
 │   └── README_PRUEBAS.md            # Explicación detallada de las pruebas
 │
 └── EXPLICACION_ANALIZADOR_SINTACTICO.md  # Documentación técnica
@@ -197,35 +199,3 @@ Implementada correctamente de menor a mayor precedencia:
 4. `<=`, `>=`, `==`
 5. `+`, `-`
 6. `*`, `/`
-
----
-
-## ❌ Errores comunes a evitar
-
-| Error | Incorrecto | Correcto |
-|-------|------------|----------|
-| Parámetros | `def suma(a, b, c):` | `def suma(a, b):` |
-| Negación | `if !activo:` | `if not activo:` |
-| Y lógico | `if a && b:` | `if a and b:` |
-| O lógico | `if a \|\| b:` | `if a or b:` |
-| Caracteres especiales | `x @ y`, `a # b` | Solo operadores permitidos |
-| Sin return | `def suma(a, b): x = a + b` | `def suma(a, b): return a + b` |
-
----
-
-## 📖 Documentación adicional
-
-- **EXPLICACION_ANALIZADOR_SINTACTICO.md:** Explicación técnica detallada paso a paso de cada regla gramatical
-- **pruebas/README_PRUEBAS.md:** Detalles completos de los casos de prueba
-
----
-
-## 👨‍💻 Autor
-
-Proyecto de Compiladores - Universidad
-
----
-
-## 📄 Licencia
-
-Este proyecto es parte de un trabajo académico.
