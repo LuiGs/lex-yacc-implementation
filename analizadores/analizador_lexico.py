@@ -43,6 +43,12 @@ palabras_reservadas = {
 # FUNCIONES
 t_ignore = " \t"
 
+# Comentarios (triple comilla simple) - debe ir ANTES de t_CADENA_TEXTO
+def t_COMENTARIO(t):
+    r"'''(.|\n)*?'''"
+    t.lexer.lineno += t.value.count('\n')
+    # No retorna nada, se ignora el comentario
+
 def t_CADENA_TEXTO(t):
     r'\"([^\\\n]|(\\.))*?\"'
     t.value = t.value[1:-1]

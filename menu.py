@@ -30,9 +30,9 @@ def pausar():
 def mostrar_menu():
     """Muestra el menú principal"""
     print("\n" + "=" * 60)
-    print("ANALIZADOR LÉXICO Y SINTÁCTICO - Subconjunto de Python".center(60))
+    print("ANALIZADOR LÉXICO Y SINTÁCTICO".center(60))
     print("=" * 60)
-    print("\n📋 MENÚ DE OPCIONES:\n")
+    print("\n Elija una Opción:\n")
     print("  1. Probar archivo con error léxico")
     print("  2. Probar archivo con error sintáctico")
     print("  3. Probar programa correcto")
@@ -55,12 +55,12 @@ def analizar_archivo(ruta_archivo, nombre_prueba=""):
         with open(ruta_archivo, 'r', encoding='utf-8') as archivo:
             codigo = archivo.read()
         
-        print("\n📄 CÓDIGO A ANALIZAR:")
+        print("\n CÓDIGO A ANALIZAR:")
         print("-" * 60)
         print(codigo)
         print("-" * 60)
         
-        print("\n🔍 RESULTADO DEL ANÁLISIS:")
+        print("\n RESULTADO DEL ANÁLISIS:")
         print("-" * 60)
         
         exito, resultado = analizar(codigo)

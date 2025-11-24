@@ -1,4 +1,4 @@
 def calcular(x, y):
     resultado = x + y
-    valor = 10 @ 5
+    valor = 10 @ 5 '''error lexico en @'''
     return resultado
