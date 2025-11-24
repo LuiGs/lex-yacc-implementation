@@ -84,28 +84,28 @@ def analizar_archivo(ruta_archivo, nombre_prueba=""):
 def opcion_error_lexico():
     """Opción 1: Probar archivo con error léxico"""
     limpiar_pantalla()
-    ruta = "pruebas/error_lexico.txt"
+    ruta = os.path.join(os.path.dirname(__file__), "pruebas", "error_lexico.txt")
     analizar_archivo(ruta, "Error Léxico (carácter ilegal '@')")
     pausar()
 
 def opcion_error_sintactico():
     """Opción 2: Probar archivo con error sintáctico"""
     limpiar_pantalla()
-    ruta = "pruebas/error_sintactico.txt"
+    ruta = os.path.join(os.path.dirname(__file__), "pruebas", "error_sintactico.txt")
     analizar_archivo(ruta, "Error Sintáctico (3 parámetros en vez de 2)")
     pausar()
 
 def opcion_programa_correcto():
     """Opción 3: Probar programa correcto"""
     limpiar_pantalla()
-    ruta = "pruebas/programa_correcto.txt"
+    ruta = os.path.join(os.path.dirname(__file__), "pruebas", "programa_correcto.txt")
     analizar_archivo(ruta, "Programa Correcto (todos los elementos del lenguaje)")
     pausar()
 
 def opcion_archivo_personalizado():
     """Opción 4: Analizar archivo de prueba personalizable"""
     limpiar_pantalla()
-    ruta = "pruebas/prueba_personalizable.txt"
+    ruta = os.path.join(os.path.dirname(__file__), "pruebas", "prueba_personalizable.txt")
     analizar_archivo(ruta, "Prueba Personalizable (edita pruebas/prueba_personalizable.txt)")
     pausar()
 
