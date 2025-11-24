@@ -66,12 +66,12 @@ def analizar_archivo(ruta_archivo, nombre_prueba=""):
         exito, resultado = analizar(codigo)
         
         if exito:
-            print("✅ ¡PROGRAMA ACEPTADO!")
+            print(" ¡PROGRAMA ACEPTADO!")
             print("\n✓ El programa es sintácticamente correcto")
             print("✓ No se encontraron errores léxicos")
             print("✓ No se encontraron errores sintácticos")
         else:
-            print("❌ Análisis sintáctico INCORRECTO")
+            print("  Análisis sintáctico INCORRECTO")
             print(f"Error: {resultado}")
             
     except FileNotFoundError:
