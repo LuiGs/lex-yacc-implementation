@@ -1,0 +1,8 @@
+# Archivos generados por Python
+__pycache__/
+*.pyc
+*.pyo
+
+# Archivos generados por PLY
+parser.out
+parsetab.py
