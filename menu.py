@@ -71,8 +71,18 @@ def analizar_archivo(ruta_archivo, nombre_prueba=""):
             print("✓ No se encontraron errores léxicos")
             print("✓ No se encontraron errores sintácticos")
         else:
-            print("  Análisis sintáctico INCORRECTO")
-            print(f"Error: {resultado}")
+            # Determinar el tipo de error basándose en la tupla retornada
+            resultado_str = str(resultado)
+            
+            if 'lexical' in resultado_str.lower():
+                print(" ❌ ERROR LÉXICO DETECTADO")
+                print("\n   El análisis se detuvo al encontrar un error léxico.")
+            elif 'syntax' in resultado_str.lower():
+                print(" ❌ ERROR SINTÁCTICO DETECTADO")
+                print("\n   El análisis se detuvo al encontrar un error sintáctico.")
+            else:
+                print(" ❌ ERROR DETECTADO")
+                print(f"\n   {resultado}")
             
     except FileNotFoundError:
         print(f"\n ERROR: No se encontró el archivo '{ruta_archivo}'")
