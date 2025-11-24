@@ -192,32 +192,3 @@ def analizar(codigo):
         return True, resultado
     except Exception as e:
         return False, str(e)
-
-# Prueba del analizador
-
-# Prueba del analizador
-if __name__ == "__main__":
-    codigo_prueba = """
-def suma(x, y):
-    z = x + y
-    return z
-"""
-    
-    print("=" * 60)
-    print("ANALIZADOR SINTÁCTICO - Subconjunto de Python")
-    print("=" * 60)
-    print("\nCódigo a analizar:")
-    print(codigo_prueba)
-    print("\n" + "=" * 60)
-    
-    exito, resultado = analizar(codigo_prueba)
-    
-    if exito:
-        print("✓ Análisis sintáctico CORRECTO")
-        print("\nÁrbol de análisis sintáctico:")
-        print(resultado)
-    else:
-        print("✗ Análisis sintáctico INCORRECTO")
-        print(f"Error: {resultado}")
-    
-    print("=" * 60)

@@ -25,7 +25,7 @@ t_OPERADOR_AND     = r'and'
 t_OPERADOR_OR      = r'or'
 t_OPERADOR_NOT     = r'not'
 
-# Palabras reservadas y funciones
+# palabras reservadas
 palabras_reservadas = {
     'def': 'DEF_FUNCION',
     'return': 'RESERVADA_RETURN',
@@ -40,14 +40,12 @@ palabras_reservadas = {
     'not': 'OPERADOR_NOT'
 }
 
-# FUNCIONES
+# Funciones
 t_ignore = " \t"
 
-# Comentarios (triple comilla simple) - debe ir ANTES de t_CADENA_TEXTO
 def t_COMENTARIO(t):
     r"'''(.|\n)*?'''"
     t.lexer.lineno += t.value.count('\n')
-    # No retorna nada, se ignora el comentario
 
 def t_CADENA_TEXTO(t):
     r'\"([^\\\n]|(\\.))*?\"'
@@ -78,19 +76,3 @@ def t_error(t):
     raise Exception('lexical', 'error')
 
 lexer = lex.lex()
-
-if __name__ == "__main__":
-    data = """
-def calcular(a, b):
-    x = 10
-    y = >
-"""
-
-    print("====== CÓDIGO DE PRUEBA ======")
-    print(data)
-
-    print("\n====== TOKENS GENERADOS ======\n")
-
-    lexer.input(data)
-    for tok in lexer:
-        print(f"{tok.type:20}  →  {tok.value}")
