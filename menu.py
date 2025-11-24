@@ -10,7 +10,25 @@ import os
 # Agregar la carpeta analizadores al path
 sys.path.insert(0, os.path.join(os.path.dirname(__file__), 'analizadores'))
 
-from analizador_sintactico import analizar
+# Intentar importar el analizador sintáctico de varias formas para evitar errores
+try:
+    from analizador_sintactico import analizar
+except ImportError:
+    try:
+        # Si la carpeta 'analizadores' es un paquete
+        from analizadores.analizador_sintactico import analizar
+    except ImportError:
+        # Intento por ruta absoluta al archivo
+        import importlib.util
+        analizador_path = os.path.join(os.path.dirname(__file__), 'analizadores', 'analizador_sintactico.py')
+        if os.path.isfile(analizador_path):
+            spec = importlib.util.spec_from_file_location("analizador_sintactico", analizador_path)
+            analizador = importlib.util.module_from_spec(spec)
+            spec.loader.exec_module(analizador)
+            analizar = analizador.analizar
+        else:
+            # Repetimos el ImportError original con información adicional
+            raise ImportError(f"No se pudo importar 'analizador_sintactico' ni desde el path ni como paquete; buscado en: {analizador_path}")
 
 def limpiar_pantalla():
     """Limpia la pantalla de la terminal"""

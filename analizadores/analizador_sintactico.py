@@ -1,10 +1,9 @@
 # Importar librería Yacc
 from ply.yacc import yacc
-from analizador_lexico import tokens, lexer
+from analizador_lexico import lexer, tokens
 
 # Definición de reglas de producción
 
-# Regla Inicial
 def p_lista_sentencias_multiple(p):
     '''lista_sentencias : sentencia lista_sentencias'''
     p[0] = [p[1]] + p[2]
