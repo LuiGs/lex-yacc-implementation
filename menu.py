@@ -75,13 +75,13 @@ def analizar_archivo(ruta_archivo, nombre_prueba=""):
             resultado_str = str(resultado)
             
             if 'lexical' in resultado_str.lower():
-                print(" ❌ ERROR LÉXICO DETECTADO")
+                print(" ERROR LÉXICO DETECTADO")
                 print("\n   El análisis se detuvo al encontrar un error léxico.")
             elif 'syntax' in resultado_str.lower():
-                print(" ❌ ERROR SINTÁCTICO DETECTADO")
+                print(" ERROR SINTÁCTICO DETECTADO")
                 print("\n   El análisis se detuvo al encontrar un error sintáctico.")
             else:
-                print(" ❌ ERROR DETECTADO")
+                print(" ERROR DETECTADO")
                 print(f"\n   {resultado}")
             
     except FileNotFoundError:
@@ -138,7 +138,9 @@ def main():
         elif opcion == "5":
             limpiar_pantalla()
             print("\n" + "=" * 60)
-            print("¡Gracias por usar el analizador!".center(60))
+            print("¡Gracias por usar nuestro analizador!".center(60))
+            print("Antezana Luis".center(60))
+            print("Figueroa Fernando".center(60))
             print("=" * 60)
             print()
             break
