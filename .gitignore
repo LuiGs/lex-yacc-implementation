@@ -6,3 +6,6 @@ __pycache__/
 # Archivos generados por PLY
 parser.out
 parsetab.py
+
+# Tutorial para profesores (no subir al repositorio)
+TUTORIAL_EJECUCION.txt
