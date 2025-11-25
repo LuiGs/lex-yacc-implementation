@@ -1,6 +1,6 @@
 # Compilador - Subconjunto de Python
 
-Analizador léxico y sintáctico para un subconjunto del lenguaje Python usando PLY.
+Analizador léxico y sintáctico para un subconjunto del lenguaje Python usando PLY
 
 ## Uso
 
