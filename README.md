@@ -63,9 +63,3 @@ proyecto_compiladores/
     ├── programa_correcto.txt
     └── prueba_personalizable.txt
 ```
-
-## Notas
-
-- El analizador se detiene al encontrar el primer error
-- Tokens en MAYÚSCULAS, no-terminales en minúsculas
-- Usa PLY (Python Lex-Yacc) para generar los analizadores
